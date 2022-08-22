@@ -1,31 +1,40 @@
-function makeAccount(init){
-	if (init===undefined){init=0}
-	var balance=init;
-	return {withdraw: function(monee){if (monee>balance)
-	{return "withdrawal Denied"}
-         if (monee<=balance){balance=balance-monee
-          return "here's your money: "+monee}
-      }
-
-     ,deposit: function(monee){
-       balance=balance+monee
-       return "your balance is: "+balance;
-     }       
-     ,transfer: function (uniqueID,monee){
-     	balance=balance-monee;
-     	uniqueID.deposit(monee)
-     }
-
-            }
+function Client(init,firstName,lastName,email,password){
+	return {
+		id:ids(),
+		firstName:firstName,
+		lastName:lastName,
+		email:email,
+		password:password,
+		balance:init,
+		withdraw: withdrawFunction, 
+		deposit: depositFunction,
+    transfer: trasferFunction
+		}
 }
-function IDGenerator(init){
-	var generator={};
-	generator.id=init;
-	generator.next=next;
-	generator.prec=prec; // most likely not to be used
+function IDGenerator(){
+	var id=0
+	function generator(){
+		id++;
+		return id
+	}
 	return generator
 }
+var ids=IDGenerator()
 var next=function(){
 	this.value=this.value+1;
 	return this.value;
 }
+var trasferFunction=function (uniqueID,money){
+     	this.balance=this.balance-money;
+     	uniqueID.deposit(money)
+     }
+var depositFunction= function(money){
+       this.balance=this.balance+money
+       return "your balance is: "+this.balance;
+     }       
+
+var withdrawFunction=function(money){if (money>balance)
+	{return "withdrawal Denied"}
+         if (money<=balance){balance=balance-money
+          return "here's your money: "+money}
+      }
