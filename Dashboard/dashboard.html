@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="stylesheet" href="dashboard.css">
   <title>Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -8,16 +9,18 @@
 </head>
 <body>
 
-<div class="" style="width:130px">
+<div class="sidebar">
   <h5 class="">Menu</h5>
-  <button class="tablink" onclick="openMethod(event, 'Balance')">Balance</button>
+  <button class="tablink" onclick="openMethod(event, 'Balance'),
+$('#balanceDisplay').text('Your Balance is : '+connectedClient.balance);
+">Balance</button>
   <button class="tablink" onclick="openMethod(event, 'Withdraw')">Withdraw</button>
   <button class="tablink" onclick="openMethod(event, 'deposit')">deposit</button>
   <br>
   <button class="tablink" onclick="openMethod(event, 'transfer')">transfer</button> 
 </div>
 
-<div style="margin-left:130px">
+<div id="dividends" style="margin-left:130px">
   <div class="welcome"></div>
 
   <div id="Balance" class="behaviour" style="display:none">

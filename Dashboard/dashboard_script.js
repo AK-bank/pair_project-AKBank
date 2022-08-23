@@ -14,21 +14,20 @@ function Client(init,firstName,lastName,email,password){
 
 
 
-function IDGenerator(){
+function IDGenerator(init){
 
-	var id=0;
-	localStorage.setItem("counter",JSON.stringify(id));
-	id=JSON.parse(localStorage.getItem(id));
+	var id=init;
 	function generator(){
 		id++;
 		return id
 	}
 	return generator
 }
-var ids=IDGenerator()
+var ids=IDGenerator(JSON.parse(localStorage.getItem(id)))
+localStorage.setItem('counter', JSON.stringify(ids));
 
+;
 var trasferFunction=function (uniqueID,money){
-	
 		if (money>this.balance)
 			{
 				return "withdrawal Denied"
@@ -102,13 +101,14 @@ $("#signUp").click(function(){
  		$("#weakPass").append("<p>the Password should have :<ul><li>minimum 8 length</li><li>contains a number</li><li>contains an upperCase and lowerCase caracter</li><li>contains a symbol</li></ul> </p>")
  	}
 })
-
+var index=JSON.parse(localStorage.getItem('index'));
 var connectedClient;
 connectedClient=JSON.parse(localStorage.getItem('connected'));
  $("#signIn").click(function(){
  	for(var i=0;i<clients.length;i++){
  		if(clients[i].email===$('#signInemail').val() && clients[i].password===$('#signInpass').val()){
  			 connectedClient=clients[i]
+ 			 index=localStorage.setItem('index', JSON.stringify(i));;
  			 localStorage.setItem('connected', JSON.stringify(connectedClient));
 				window.open("../dashboard/dashboard.html");
  			 return ;
@@ -135,17 +135,32 @@ function openMethod(evt,method ) {
 }
 
 $(".welcome").text("welcome " + connectedClient.firstName +" "+ connectedClient.id);
-$("#balanceDisplay").text("Your Balance is : "+connectedClient.balance);
+
+
+
 $("#withdraw_button").click(function(){
 	connectedClient.withdraw(parseInt($("#withdrawAmount").val()))
+	clients[index]=connectedClient;
+	localStorage.setItem('client', JSON.stringify(clients))
+	localStorage.setItem('connected', JSON.stringify(connectedClient))
 });
 
 	
 $("#deposit_button").click(function(){
 
 connectedClient.deposit(parseInt($("#depositAmount").val()))
+clients[index]=connectedClient;
+localStorage.setItem('client', JSON.stringify(clients))
+
+	localStorage.setItem('connected', JSON.stringify(connectedClient))
 }); 			 
 
 $('#transfer_button').click(function(){
 	connectedClient.transfer(parseInt($('#clientID').val()),parseInt($('#transfeAmount').val()))
+	clients[index]=connectedClient;
+	localStorage.setItem('client', JSON.stringify(clients))
+
+	localStorage.setItem('connected', JSON.stringify(connectedClient))
+
+
 })
