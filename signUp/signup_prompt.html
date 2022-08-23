@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="dashboard.css">
 	<meta charset="utf-8">
 	<title>SignUP</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-	<div>
-		<input type="text" name="firstName" id="firstName" placeholder="First Name">
-		<input type="text" name="lastName" id="lastName" placeholder="Last Name">
-		<input type="email" name="E-mail" id="signUpEmail" placeholder="Email">
-		<input type="password" name="PassWord" id="signUpPass" placeholder="Password">
-		<input type="text" name="Balance" id="Balance" placeholder="your Balance">
-		<button id="signUp">SignUp</button>
-		<p>you have an account ? <a href="../signIn/signin_prompt.html">Sign In</a></p>
-		<div id='weakPass'>
+	<div id="container">
+		<input type="text" name="firstName" id="firstName" class="child" placeholder="First Name">
+		<input type="text" name="lastName" id="lastName" class="child" placeholder="Last Name">
+		<input type="email" name="E-mail" id="signUpEmail" class="child" placeholder="Email">
+		<input type="password" name="PassWord" id="signUpPass" class="child" placeholder="Password">
+		<input type="number" name="Balance" id="Balance" class="child" placeholder="your Balance">
+		<button id="signUp" class="child">SignUp</button>
+		<p class="child">you have an account ? <a href="../signIn/signin_prompt.html">Sign In</a></p>
+		<div id='weakPass' class="child">
 			
 		</div>
 	</div>
