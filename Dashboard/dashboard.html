@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<div class="" style="width:130px">
+  <h5 class="">Menu</h5>
+  <button class="tablink" onclick="openMethod(event, 'Balance')">Balance</button>
+  <button class="tablink" onclick="openMethod(event, 'Withdraw')">Withdraw</button>
+  <button class="tablink" onclick="openMethod(event, 'deposit')">deposit</button>
+  <br>
+  <button class="tablink" onclick="openMethod(event, 'transfer')">transfer</button> 
+</div>
+
+<div style="margin-left:130px">
+  <div class="welcome"></div>
+
+  <div id="Balance" class="behaviour" style="display:none">
+    <h2>Balance</h2>
+    <p id="balanceDisplay"></p>
+    
+  </div>
+
+  <div id="Withdraw" class="behaviour" style="display:none">
+    <h2>Withdraw</h2>
+    <p>withdraw money</p>
+    <input type="text" name="withdraw_amount" id="withdrawAmount"></input>
+    <button id="withdraw_button" >Withdraw</button> 
+    <p></p>
+  </div>
+
+  <div id="deposit" class="behaviour" style="display:none">
+    <h2>deposit</h2>
+    <p>Deposit money</p>
+    <input name="deposit_amount" id="depositAmount"></input>
+    <button id="deposit_button">Deposit</button>
+  </div>
+  <div id="transfer" class="behaviour" style="display:none">
+    <h2>transfer</h2>
+    <p>Please input recepient ID and amount</p>
+    <input type="number" name="ID" placeholder="ID" id="clientID"></input>
+    <input type="number" name="transfer_amount" id="transfeAmount" placeholder="amount"></input>
+    <button id="transfer_button">Transfer</button>
+  </div>
+</div>
+<script src="dashboard_script.js" type="text/javascript"></script>
+</body>
+</html>
