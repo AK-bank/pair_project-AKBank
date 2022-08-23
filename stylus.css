@@ -1,0 +1,160 @@
+#logoHeader{
+	width:250px;
+	height: 100%;
+	
+}
+header{
+	display: flex;
+	height: 90px;
+}
+.nav-bar-items{
+	    list-style: none;
+	    margin-left: auto; 
+		margin-right: 20px;
+	 	margin-top: 30px;
+	 	
+	
+	 	
+}
+li{
+	display: inline-block;
+	margin-left: 80px;
+	font-family: arial;
+	font-size: 20px;
+
+}
+li:hover{
+	color: lightblue;
+	cursor:pointer ;
+}
+
+.nav-bar-items,#logoHeader{
+   display:inline-block;
+}
+
+.intro{
+	width: 100%;
+	height: 700px;
+	background-image: url("dameDane.png");
+	background-size: cover;
+}
+.title{
+	text-align: center;
+	vertical-align: center;
+	color: white;
+	font-size: 50px;
+	padding-top: 300px;
+}
+
+footer{
+	text-align: center;
+	background-color: lightblue;
+	height: 50px;
+}
+footer > p{
+	color: white;
+	padding-top: 10px;
+	font-family: arial;
+}
+.form-style{
+margin-top: 20px;
+border-top: 10px;
+border-top-style: solid;
+
+border-color:lightblue ;
+display: flex;
+
+}
+.form-style>div{
+
+width: 50%;
+margin: 50px;
+font-family: arial;
+
+
+}
+.form-style>form{
+
+width: 50%;
+
+}
+form > div>input{
+	width: 150px;
+	margin: 10px;
+	font-family: arial;
+	padding: 16px 30px;
+	border-radius: 6px;
+	border-color: lightblue;
+
+	
+
+
+}
+
+form > button{
+	width: 150px;
+	border-radius: 6px;
+	margin: 10px;
+	background-color: transparent;
+	cursor: pointer;
+	padding: 16px 30px;
+	border-color: grey;
+
+
+	
+}
+form > button:hover{
+	border-color:#d71b6f ;
+	color: #d71b6f;
+}
+#tsawer{
+	display: flex;
+	margin-top: 50px;
+}
+#tsawer>div{
+	width: 50%;
+	height: 700px;
+}
+#img-animation{
+	height: 100%;
+	margin-left: 100px;
+}
+#description>h1{
+	font-family: arial;
+	font-size: 25px;
+	font-style: bold;
+	color:lightblue ;
+}
+#description>p{
+	font-family: arial;
+	font-size: 18px;
+	word-spacing: 2px;
+	letter-spacing: 1.5px;
+	line
+
+}
+#uname{
+	margin-left: 42%;
+}
+#upass{
+	margin-left: 42% ;
+}
+#logging{
+	padding: 16px 30px ;
+
+	margin-left: 50%;
+}
+#prompt{
+	text-align: center;
+	color: red;
+}
+a{
+	text-decoration: none;
+}
+a:hover{
+	color: lightblue;
+}
+#img-animation{
+	width: 500px;
+	height: 500px;
+}
