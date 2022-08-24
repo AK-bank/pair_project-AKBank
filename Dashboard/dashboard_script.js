@@ -14,16 +14,16 @@ function Client(init,firstName,lastName,email,password){
 
 
 
-function IDGenerator(init){
+function IDGenerator(){
 
-	var id=init;
+	var id=0;
 	function generator(){
 		id++;
 		return id
 	}
 	return generator
 }
-var ids=IDGenerator(JSON.parse(localStorage.getItem(id)))
+var ids=IDGenerator()
 localStorage.setItem('counter', JSON.stringify(ids));
 
 ;
